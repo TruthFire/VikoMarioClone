@@ -12,7 +12,7 @@ public class SideScrolling : MonoBehaviour
 
    private void LateUpdate() {
         Vector3 cameraPos = transform.position;
-        cameraPos.x = player.position.x;
+        cameraPos.x = Mathf.Max(cameraPos.x, player.position.x);
         transform.position = cameraPos; 
    }
 }
