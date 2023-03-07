@@ -12,7 +12,9 @@ public class GoombaManager : MonoBehaviour
 
             Player player = collision.gameObject.GetComponent<Player>();
 
-            if( collision.transform.DotTest(transform, Vector2.down)) {
+            if(player.starpower) {
+                Hit();
+            } else if( collision.transform.DotTest(transform, Vector2.down)) {
                 Flaten();
             } else {
                 player.Hit();
